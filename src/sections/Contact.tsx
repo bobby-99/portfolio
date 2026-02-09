@@ -28,7 +28,13 @@ export default function Contact() {
             Send Email
           </MagneticButton>
           <MagneticButton
-            href="#"
+            href="tel:+916302753005"
+            className="px-12 py-5 border border-mono-700 font-mono text-sm tracking-widest uppercase hover:bg-white hover:text-black hover:border-white transition-all rounded-full"
+          >
+            Give Me A Call
+          </MagneticButton>
+          <MagneticButton
+            href="https://drive.google.com/file/d/11111111111111111111111111111111/view?usp=sharing"
             className="px-12 py-5 border border-mono-700 font-mono text-sm tracking-widest uppercase hover:bg-white hover:text-black hover:border-white transition-all rounded-full"
           >
             Download CV
