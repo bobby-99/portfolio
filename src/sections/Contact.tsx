@@ -5,7 +5,7 @@ export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 md:py-32 px-6 bg-mono-950 relative">
+    <section id="contact" ref={sectionRef} className="min-h-screen flex flex-col justify-center py-20 md:py-32 px-6 bg-mono-950 relative">
       <div className="max-w-4xl mx-auto text-center space-y-12">
         <div className="space-y-4">
           <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase">

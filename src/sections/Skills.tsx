@@ -29,7 +29,7 @@ export default function Skills() {
   );
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 md:py-32 px-6 bg-background">
+    <section id="skills" ref={sectionRef} className="min-h-screen flex flex-col justify-center py-20 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-20">
           <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
@@ -46,7 +46,7 @@ export default function Skills() {
             ref={(el) => {
               cardsRef.current[0] = el;
             }}
-            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors"
+            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors will-change-transform"
           >
             <div className="w-12 h-12 rounded-full bg-mono-800 flex items-center justify-center">
               <Layout className="w-6 h-6 text-white" />
@@ -71,7 +71,7 @@ export default function Skills() {
             ref={(el) => {
               cardsRef.current[1] = el;
             }}
-            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors"
+            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors will-change-transform"
           >
             <div className="w-12 h-12 rounded-full bg-mono-800 flex items-center justify-center">
               <Server className="w-6 h-6 text-white" />
@@ -96,7 +96,7 @@ export default function Skills() {
             ref={(el) => {
               cardsRef.current[2] = el;
             }}
-            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors"
+            className="glass-card p-8 rounded-2xl space-y-6 hover:border-mono-600 transition-colors will-change-transform"
           >
             <div className="w-12 h-12 rounded-full bg-mono-800 flex items-center justify-center">
               <Settings className="w-6 h-6 text-white" />

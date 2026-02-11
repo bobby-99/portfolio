@@ -84,14 +84,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* Text Content */}
-          <div className="hero-content lg:col-span-8 space-y-8">
+          <div className="hero-content lg:col-span-8 space-y-8 will-change-transform">
             <div className="overflow-hidden">
-              <p className="hero-eyebrow font-mono text-mono-400 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 opacity-0 translate-y-4">
+              <p className="hero-eyebrow font-mono text-mono-400 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 opacity-0 translate-y-4 will-change-transform">
                 Full-Stack Developer
               </p>
             </div>
 
-            <h1 className="font-display font-bold text-gradient leading-[0.9] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6rem] tracking-tight">
+            <h1 className="font-display font-bold text-gradient leading-[0.9] text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6rem] tracking-tight will-change-transform hero-line">
               Forging Digital
               <br />
               Excellence &
@@ -99,7 +99,7 @@ export default function Hero() {
               <span className="text-mono-500">Innovation</span>
             </h1>
 
-            <div className="hero-desc max-w-xl pt-4 opacity-0 translate-y-4">
+            <div className="hero-desc max-w-xl pt-4 opacity-0 translate-y-4 will-change-transform">
               <p className="text-mono-400 text-base sm:text-lg leading-relaxed">
                 I craft complete web experiences — slick interfaces on the surface,
                 solid engineering underneath. Working across the full stack with
@@ -107,7 +107,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="hero-cta flex flex-wrap gap-4 pt-4 opacity-0 translate-y-4">
+            <div className="hero-cta flex flex-wrap gap-4 pt-4 opacity-0 translate-y-4 will-change-transform">
               <MagneticButton
                 href="#work"
                 className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-mono text-xs sm:text-sm tracking-widest uppercase hover:bg-mono-200 transition-colors rounded-full"
@@ -125,7 +125,7 @@ export default function Hero() {
 
           {/* Social Links */}
           <div className="lg:col-span-4 mt-8 lg:mt-0">
-            <div className="flex lg:flex-col gap-6 lg:gap-2 lg:text-right lg:items-end opacity-0 hero-social translate-y-4">
+            <div className="flex lg:flex-col gap-6 lg:gap-2 lg:text-right lg:items-end opacity-0 hero-social translate-y-4 will-change-transform">
               <p className="font-mono text-xs text-mono-500 uppercase tracking-widest hidden lg:block">
                 Connect
               </p>
@@ -160,7 +160,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hero-scroll opacity-0">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hero-scroll opacity-0 will-change-transform">
           <div className="scroll-indicator w-6 h-10 border-2 border-mono-700 rounded-full flex justify-center pt-2">
             <div className="w-1 h-2 bg-white rounded-full"></div>
           </div>

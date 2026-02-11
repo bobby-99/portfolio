@@ -29,12 +29,12 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-20 md:py-32 px-6 bg-mono-950 relative overflow-hidden"
+      className="min-h-screen flex items-center py-20 md:py-32 px-6 bg-mono-950 relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-mono-900/20 to-transparent pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10 about-content opacity-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto relative z-10 about-content opacity-100 w-full will-change-transform">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
               <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase">
@@ -104,8 +104,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 sticky top-24 group">
-            <div className="aspect-[3/4] w-full lg:w-96 rounded-2xl overflow-hidden bg-mono-800 relative z-20 transition-transform duration-500 group-hover:-translate-y-2">
+          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0 sticky top-24 group">
+            <div className="aspect-[3/4] w-full max-w-sm lg:max-w-md rounded-2xl overflow-hidden bg-mono-800 relative z-20 transition-transform duration-500 group-hover:-translate-y-2">
               <img
                 src="/images/about_portrait.jpg"
                 alt="Profile"
@@ -114,10 +114,10 @@ export default function About() {
             </div>
 
             {/* Card Layer 1 */}
-            <div className="absolute top-4 right-[-10px] w-full lg:w-96 h-full border border-mono-700 bg-mono-900/50 backdrop-blur-sm rounded-2xl z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            <div className="absolute top-4 right-[-10px] w-full max-w-sm lg:max-w-md h-full border border-mono-700 bg-mono-900/50 backdrop-blur-sm rounded-2xl z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2 hidden lg:block"></div>
 
             {/* Card Layer 2 */}
-            <div className="absolute top-8 right-[-20px] w-full lg:w-96 h-full border border-mono-800 bg-mono-950/30 rounded-2xl z-0 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4"></div>
+            <div className="absolute top-8 right-[-20px] w-full max-w-sm lg:max-w-md h-full border border-mono-800 bg-mono-950/30 rounded-2xl z-0 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4 hidden lg:block"></div>
 
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-mono-800 rounded-full blur-2xl opacity-50 z-30 pointer-events-none"></div>
           </div>

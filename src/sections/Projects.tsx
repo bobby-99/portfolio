@@ -75,7 +75,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="work" ref={sectionRef} className="py-20 md:py-32 px-6 relative bg-background">
+    <section id="work" ref={sectionRef} className="min-h-screen flex flex-col justify-center py-20 md:py-32 px-6 relative bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-12 md:mb-20">
           <div>
@@ -103,7 +103,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`project-card group cursor-pointer block ${index % 2 === 1 ? 'md:mt-24' : ''
+              className={`project-card group cursor-pointer block will-change-transform ${index % 2 === 1 ? 'md:mt-24' : ''
                 }`}
               data-cursor="hover"
             >
