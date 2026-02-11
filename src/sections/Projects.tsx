@@ -75,14 +75,14 @@ export default function Projects() {
   );
 
   return (
-    <section id="work" ref={sectionRef} className="py-32 px-6 relative bg-background">
+    <section id="work" ref={sectionRef} className="py-20 md:py-32 px-6 relative bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-20">
+        <div className="flex justify-between items-end mb-12 md:mb-20">
           <div>
-            <p className="font-mono text-mono-500 text-sm tracking-[0.3em] uppercase mb-4">
+            <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
               Selected Works
             </p>
-            <h2 className="font-display text-5xl md:text-7xl font-bold text-foreground">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-foreground">
               Projects
             </h2>
           </div>

@@ -29,18 +29,18 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-32 px-6 bg-mono-950 relative overflow-hidden"
+      className="py-20 md:py-32 px-6 bg-mono-950 relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-mono-900/20 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10 about-content opacity-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="font-mono text-mono-500 text-sm tracking-[0.3em] uppercase">
+              <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase">
                 About Me
               </p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-foreground">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
                 Building with <span className="text-mono-500">precision</span> & <span className="text-mono-500">purpose</span>
               </h2>
               <div className="text-mono-400 text-lg leading-relaxed max-w-lg">

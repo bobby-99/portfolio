@@ -29,13 +29,13 @@ export default function Skills() {
   );
 
   return (
-    <section id="skills" ref={sectionRef} className="py-32 px-6 bg-background">
+    <section id="skills" ref={sectionRef} className="py-20 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <p className="font-mono text-mono-500 text-sm tracking-[0.3em] uppercase mb-4">
+        <div className="text-center mb-12 md:mb-20">
+          <p className="font-mono text-mono-500 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4">
             Capabilities
           </p>
-          <h2 className="font-display text-5xl md:text-7xl font-bold text-foreground">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-foreground">
             Tech Stack
           </h2>
         </div>
