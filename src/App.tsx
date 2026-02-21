@@ -8,6 +8,7 @@ import Projects from './sections/Projects';
 import About from './sections/About';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +41,9 @@ function App() {
         <Skills />
         <Contact />
       </main>
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
