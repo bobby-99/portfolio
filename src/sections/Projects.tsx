@@ -15,25 +15,31 @@ const projects = [
     image: '/images/project_orbit.jpg',
     tech: 'React • Node.js • PostgreSQL',
     year: '2024',
-    link: '#',
+    github: 'https://www.github.com/bobby-99/orbit-view',
+    live: '',
+    description: 'A comprehensive productivity dashboard designed to help users track their goals and manage their daily workflows visually.',
   },
   {
     id: 2,
-    title: 'Task Manager',
+    title: 'Tasks',
     category: 'SaaS Platform',
     image: '/images/project_taskmanager.jpg',
     tech: 'PostgreSQL • Express • React',
     year: '2024',
-    link: '#',
+    github: 'https://www.github.com/bobby-99/tasks',
+    live: '',
+    description: 'A robust SaaS platform for task management, enabling seamless collaboration and project organization.',
   },
   {
     id: 3,
-    title: 'Playlist DJ',
+    title: 'Jam Session',
     category: 'Social Audio App',
     image: '/images/project_playlist.jpg',
     tech: 'Socket.io • Redis • Spotify API',
     year: '2023',
-    link: '#',
+    github: 'https://www.github.com/bobby-99/jam-session',
+    live: '',
+    description: 'A social audio application that allows users to create collaborative playlists and share music synchronously using the Spotify API.',
   },
   {
     id: 4,
@@ -42,9 +48,9 @@ const projects = [
     image: '/images/project_internship_aggregator.jpg',
     tech: 'React • Node.js • PostgreSQL • Playwright',
     year: '2025',
-    link: '#',
-    target: '_blank',
-    rel: 'noopener noreferrer'
+    github: '',
+    live: '',
+    description: 'An internship aggregator platform that automatically scrapes and curates software engineering internship opportunities.',
   },
 ];
 
@@ -93,46 +99,62 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {projects.map((project, index) => (
-            <a
+            <div
               key={project.id}
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`project-card group cursor-pointer block will-change-transform ${index % 2 === 1 ? 'md:mt-24' : ''
+              className={`project-card group block will-change-transform ${index % 2 === 1 ? 'md:mt-24' : ''
                 }`}
-              data-cursor="hover"
             >
-              <div className="overflow-hidden rounded-3xl mb-6 bg-mono-900 aspect-[16/10] relative mx-4">
+              <div className="overflow-hidden rounded-3xl mb-6 bg-mono-900 aspect-[16/10] relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="project-image w-full h-full object-cover transition-transform duration-700 rounded-3xl"
+                  className="project-image w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-3xl"
                 />
-                <div className="absolute bottom-6 left-6 z-20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <MagneticButton className="px-3 py-1 bg-white text-black text-xs font-mono uppercase tracking-wider rounded-full pointer-events-none">
-                    View Project
-                  </MagneticButton>
-                </div>
               </div>
 
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-display text-2xl font-bold mb-2 group-hover:text-mono-300 transition-colors text-foreground">
+              <div className="flex flex-col">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-display text-3xl font-bold group-hover:text-mono-300 transition-colors text-foreground">
                     {project.title}
                   </h3>
-                  <p className="text-mono-500 text-sm">{project.tech}</p>
                 </div>
-                <span className="font-mono text-mono-600 text-xs">
-                  {project.year}
-                </span>
+
+                <p className="text-mono-500 text-sm font-mono mb-6">
+                  {project.tech}
+                </p>
+
+                <div className="flex gap-4 mb-6">
+                  {project.github ? (
+                    <MagneticButton href={project.github} className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full border border-mono-700 hover:border-white transition-colors">
+                      GitHub
+                    </MagneticButton>
+                  ) : (
+                    <button disabled className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full border border-mono-800 text-mono-600 cursor-not-allowed">
+                      GitHub
+                    </button>
+                  )}
+                  {project.live ? (
+                    <MagneticButton href={project.live} className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full bg-white text-black hover:bg-mono-200 transition-colors">
+                      Live
+                    </MagneticButton>
+                  ) : (
+                    <button disabled className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full bg-mono-900 text-mono-600 cursor-not-allowed">
+                      Live
+                    </button>
+                  )}
+                </div>
+
+                <p className="text-mono-400 text-sm leading-relaxed max-w-lg">
+                  {project.description}
+                </p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

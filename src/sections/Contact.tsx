@@ -34,7 +34,7 @@ export default function Contact() {
             Give Me A Call
           </MagneticButton>
           <MagneticButton
-            href="https://drive.google.com/file/d/11111111111111111111111111111111/view?usp=sharing"
+            href="https://drive.google.com/file/d/1vczEJzn0JKFGOlhhHt9hh5CdkYtsnKf6/view?usp=drive_link"
             className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 border border-mono-700 font-mono text-xs sm:text-sm tracking-widest uppercase hover:bg-white hover:text-black hover:border-white transition-all rounded-full"
           >
             Download CV
