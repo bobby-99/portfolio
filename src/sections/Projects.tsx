@@ -11,35 +11,35 @@ const projects = [
   {
     id: 1,
     title: 'Orbit View',
-    category: 'Productivity Dashboard',
+    category: 'Personal Resource Planning Dashboard',
     image: '/images/project_orbit.jpg',
-    tech: 'React • Node.js • PostgreSQL',
+    tech: 'React • Django REST • PostgreSQL',
     year: '2024',
     github: 'https://www.github.com/bobby-99/orbit-view',
     live: '',
-    description: 'A comprehensive productivity dashboard designed to help users track their goals and manage their daily workflows visually.',
+    description: 'Engineered a modular full-stack dashboard unifying tasks, expenses, health, and habits for a holistic personal data overview. Features a scalable Django REST backend, responsive hybrid navigation, and a custom analytics engine using Recharts for comprehensive data filtering.',
   },
   {
     id: 2,
     title: 'Tasks',
-    category: 'SaaS Platform',
+    category: 'Kanban Productivity App',
     image: '/images/project_taskmanager.jpg',
-    tech: 'PostgreSQL • Express • React',
+    tech: 'Next.js • Firebase • dnd-kit',
     year: '2024',
     github: 'https://www.github.com/bobby-99/tasks',
     live: '',
-    description: 'A robust SaaS platform for task management, enabling seamless collaboration and project organization.',
+    description: 'Developed a kanban-style productivity application featuring seamless drag-and-drop functionality with Next.js, Firebase, and TailwindCSS. Implemented a structured task lifecycle with real-time state synchronization via Firestore, ensuring complete and robust data consistency.',
   },
   {
     id: 3,
     title: 'Jam Session',
-    category: 'Social Audio App',
+    category: 'Real-Time Collaborative Playlist Platform',
     image: '/images/project_playlist.jpg',
-    tech: 'Socket.io • Redis • Spotify API',
+    tech: 'React • Node.js • Socket.IO',
     year: '2023',
     github: 'https://www.github.com/bobby-99/jam-session',
     live: '',
-    description: 'A social audio application that allows users to create collaborative playlists and share music synchronously using the Spotify API.',
+    description: 'Designed a real-time collaborative playlist platform using React, Node.js, and Socket.IO. Engineered a deterministic vote-based queue ranking system to ensure concurrency-safe playback, fully backed by a containerized PostgreSQL database and robust JWT authorization boundaries.',
   },
   {
     id: 4,
@@ -50,7 +50,18 @@ const projects = [
     year: '2025',
     github: '',
     live: '',
-    description: 'An internship aggregator platform that automatically scrapes and curates software engineering internship opportunities.',
+    description: 'An internship aggregator platform that automatically scrapes and curates software engineering internship opportunities, providing students with a centralized hub for intuitively discovering and tracking relevant career openings.',
+  },
+  {
+    id: 5,
+    title: 'CropSmart',
+    category: 'Smart Crop Yield Suggestion System',
+    image: '/images/project_cropsmart.jpg',
+    tech: 'HTML • CSS • JavaScript',
+    year: '2024',
+    github: '',
+    live: '',
+    description: 'Created a smart crop yield suggestion system to assist farmers in making optimal decisions based on soil nutrients and weather conditions. Offers personalized fertilizer recommendations and crop analysis through a responsive, JS-powered interface with secure authentication.',
   },
 ];
 
@@ -99,18 +110,16 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <div
               key={project.id}
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className={`project-card group block will-change-transform ${index % 2 === 1 ? 'md:mt-24' : ''
-                }`}
+              className="project-card group block will-change-transform"
             >
               <div className="overflow-hidden rounded-3xl mb-6 bg-mono-900 aspect-[16/10] relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -141,16 +150,16 @@ export default function Projects() {
                   )}
                   {project.live ? (
                     <MagneticButton href={project.live} className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full bg-white text-black hover:bg-mono-200 transition-colors">
-                      Live
+                      Demo
                     </MagneticButton>
                   ) : (
                     <button disabled className="px-5 py-2 text-xs font-mono uppercase tracking-wider rounded-full bg-mono-900 text-mono-600 cursor-not-allowed">
-                      Live
+                      Demo
                     </button>
                   )}
                 </div>
 
-                <p className="text-mono-400 text-sm leading-relaxed max-w-lg">
+                <p className="text-mono-400 text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
