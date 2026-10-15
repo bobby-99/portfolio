@@ -1,49 +1,34 @@
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation';
-import CustomCursor from './components/CustomCursor';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
 import About from './sections/About';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 function App() {
-  useEffect(() => {
-    // Refresh ScrollTrigger on load and resize
-    ScrollTrigger.refresh();
-
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
+  useScrollReveal();
 
   return (
-    <div className="relative min-h-screen bg-black text-white selection:bg-white selection:text-black">
-      {/* Interactive Elements */}
-      <CustomCursor />
+    <div className="relative min-h-screen bg-[#0A0A0B] text-[#f4f4f5] selection:bg-accent/25 selection:text-accent">
+      {/* Subtle Grain Overlay */}
+      <div className="grain-overlay" aria-hidden="true" />
 
-      {/* Decorative Overlay */}
-      <div className="grain-overlay" />
-
-      {/* Navigation */}
+      {/* Top Navigation */}
       <Navigation />
 
       {/* Main Content */}
       <main className="relative z-10">
         <Hero />
-        <About />
         <Projects />
+        <About />
         <Skills />
         <Contact />
       </main>
 
-      {/* Vercel Speed Insights */}
-      <SpeedInsights />
+      {/* Vercel Speed Insights (production only) */}
+      {typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && <SpeedInsights />}
     </div>
   );
 }
