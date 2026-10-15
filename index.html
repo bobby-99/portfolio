@@ -113,8 +113,9 @@ img{max-width:100%;display:block}
 .pill i{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
 .hname{font-family:var(--f-display);font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:0;margin-top:var(--s3);color:var(--text)}
 h1.headline{font-family:var(--f-display);font-weight:500;font-size:clamp(38px,4.2vw,60px);line-height:1.05;letter-spacing:-.01em;margin-top:var(--s2)}
+@supports (width:1cqw){.hero-text{container-type:inline-size}h1.headline{font-size:clamp(26px,10cqw,60px)}}
 .headline .lead{display:block;font-style:italic;font-weight:400;color:var(--muted)}
-.role-mask{display:grid;overflow:hidden;padding-bottom:6px}
+.role-mask{display:grid;overflow:hidden;padding-bottom:6px;max-width:100%}
 .role{grid-area:1/1;justify-self:start;position:relative;width:max-content;max-width:100%;padding-bottom:10px;color:var(--text);
   transform:translateY(100%);opacity:0;transition:transform 650ms var(--ease),opacity 650ms var(--ease)}
 .role i{font-style:normal;color:var(--accent)}
@@ -255,7 +256,7 @@ footer a{transition:color var(--t1) var(--ease)}footer a:hover{color:var(--accen
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal,.js .sec-left .lbl,.js .sec-left .sh span{opacity:1!important;transform:none!important}
   .caret{animation:none}
-  .role:not(.on){display:none}
+  .role:not(.on){visibility:hidden}
 }
 </style>
 </head>
@@ -626,7 +627,6 @@ if(reduced){ show('about',false); } else { setTimeout(()=>show('about',true),red
 
 /* ============================ rotating role ============================== */
 (function roles(){
-  if(reduced) return;
   const mask=$('#roleMask');
   mask.innerHTML=ROLES.map((r,i)=>`<span class="role${i===0?' on':''}">${esc(r)}<i>.</i></span>`).join('');
   const els=$$('.role',mask); let ri=0,timer,paused=false;
@@ -637,6 +637,17 @@ if(reduced){ show('about',false); } else { setTimeout(()=>show('about',true),red
   h1.addEventListener('mouseenter',()=>paused=true); h1.addEventListener('mouseleave',()=>paused=false);
   h1.addEventListener('focusin',()=>paused=true); h1.addEventListener('focusout',()=>paused=false);
   schedule();
+  // fit: shrink the headline just enough that the widest role never clips or runs under the terminal
+  const col=$('#heroText');
+  function fit(){
+    h1.style.fontSize='';
+    const room=col.clientWidth; let max=0;
+    els.forEach(r=>{ max=Math.max(max,r.scrollWidth); });
+    if(max>room){ const fs=parseFloat(getComputedStyle(h1).fontSize); h1.style.fontSize=Math.max(24,Math.floor(fs*room/max*0.98))+'px'; }
+  }
+  fit();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  let ft; addEventListener('resize',()=>{clearTimeout(ft);ft=setTimeout(fit,80);});
 })();
 
 /* ================================== nav ================================== */
